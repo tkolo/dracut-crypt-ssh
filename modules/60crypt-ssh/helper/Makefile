@@ -19,7 +19,7 @@ console_auth:	auth.c
 	gcc $(CFLAGS) $^ -o $@
 
 unlock:	crypttab.o unlock.o
-	gcc -lblkid $^ -o $@
+	gcc $^ -o $@ -lblkid
 
 crypttab-test: crypttab-test.c crypttab.o crypttab-test-data
 	gcc crypttab-test.c $(CFLAGS) crypttab.o -lblkid -o crypttab-test
